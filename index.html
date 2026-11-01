@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Battle Arena</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #10101a;
+            color: white;
+        }
+
+        header {
+            background: #191927;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ffb800;
+        }
+
+        header h1 {
+            color: #ffb800;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1c1c2b;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            color: #ffb800;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #00ff99;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+
+        input {
+            background: #29293b;
+            color: white;
+        }
+
+        button {
+            background: #ffb800;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffd04a;
+        }
+
+        .notice {
+            color: #bbbbcc;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>PRO BATTLE ARENA</h1>
+    <p>Free Fire Tournament</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Upcoming Tournament</h2>
+
+        <p>Entry Fee</p>
+        <div class="price">₹19</div>
+
+        <p>Reward: ₹15 per elimination</p>
+        <p>Minimum Players: 20</p>
+        <p>Maximum Players: 48</p>
+
+        <p class="notice">
+            Tournament registration will be confirmed after
+            payment verification.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Player Registration</h2>
+
+        <form id="registrationForm">
+
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="gameName"
+                placeholder="Free Fire In-Game Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="gameUID"
+                placeholder="Free Fire UID"
+                required
+            >
+
+            <button type="submit">
+                Register for Tournament
+            </button>
+
+        </form>
+
+        <p id="message" class="notice"></p>
+    </div>
+
+    <div class="card">
+        <h2>Payment Information</h2>
+
+        <p>Entry Fee: ₹19</p>
+
+        <p class="notice">
+            UPI QR code and payment verification
+            will be added in the next step.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    Pro Battle Arena © 2026
+</footer>
+
+<script>
+    document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const playerName =
+                document.getElementById("playerName").value;
+
+            const gameName =
+                document.getElementById("gameName").value;
+
+            const gameUID =
+                document.getElementById("gameUID").value;
+
+            document.getElementById("message").textContent =
+                "Registration form ready for " + playerName +
+                ". Firebase connection will be added next.";
+        });
+</script>
+
+</body>
+</html>
